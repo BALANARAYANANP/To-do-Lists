@@ -7,7 +7,7 @@ function TodoForm({ addTodo }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (task.trim()) {
-      addTodo(task); // Pass priority when adding a todo
+      addTodo(task); 
       setTask('');
      
     }
