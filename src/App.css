@@ -1,38 +1,205 @@
-.App {
+/* General Styles */
+body {
+  background-color: #f0f4f8;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  
+  height: 100vh;
+  margin: 0;
+}
+
+/* App Container */
+.App1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.app {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  
+  width: 350px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Title */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #007bff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Input Form */
+form {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  width: 70%;
+  padding: 10px;
+  font-size: 1rem;
+  margin-left: 2rem;
+  border: 2px solid #007bff;
+  border-radius: 10px;
+  outline: none;
+}
+/* Input field when editing */
+li input[type="text"] {
+  flex-grow: 1;
+  margin-right: 10px;
+  padding: 5px;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  outline: none;
+}
+@media (max-width: 768px) {
+  .app {
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  form {
+    flex-direction: column;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  li button {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .filter-buttons, .filter-date {
+    flex-direction: column;
+  }
+
+  .filter-buttons button, .filter-date button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  form input[type="text"], form input[type="date"], form button {
+    font-size: 14px;
+  }
+
+  li {
+    padding: 8px;
+  }
+
+  li button {
+    padding: 5px;
+    font-size: 14px;
+  }
+
+  .filter-buttons button, .filter-date button {
+    font-size: 14px;
+  }
+}
+
+
+input[type="text"]:focus {
+  border-color: #0056b3;
+  box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5);
+}
+
+button[type="submit"] {
+  background-color: #007bff;
   color: white;
+  border: none;
+  padding: 5px 10px;
+  width: 7rem;
+  margin-left: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+button[type="submit"]:hover {
+  background-color: #0056b3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Todo Items */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #e9f1f7;
+  padding: 10px 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+li:hover {
+  background-color: #d4e7f5;
+}
+
+span {
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+span.completed {
+  text-decoration: line-through;
+  color: #6c757d;
+}
+
+/* Buttons */
+button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #c82333;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.filter-buttons button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.filter-buttons button:hover {
+  background-color: #0056b3;
+}
+
+.filter-buttons button.active {
+  background-color: #0056b3;
 }
